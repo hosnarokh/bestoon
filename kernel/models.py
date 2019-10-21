@@ -15,7 +15,10 @@ class Expense(models.Model):
         verbose_name_plural = _('Expenses')
 
     def __str__(self):
-        return '%s-%s' % (self.amount, self.description)
+        return '%s-%s' % (self.amount, self.created_date)
+
+    def __unicode__(self):
+        return '%s-%s' % (self.amount, self.created_date)
 
 
 class Income(models.Model):
@@ -30,4 +33,7 @@ class Income(models.Model):
         verbose_name_plural = _('Incomes')
 
     def __str__(self):
-        return '%s-%s' % (self.amount, self.description)
+        return '%s-%s' % (self.amount, self.created_date)
+
+    def __unicode__(self):
+        return '%s-%s' % (self.amount, self.created_date)
